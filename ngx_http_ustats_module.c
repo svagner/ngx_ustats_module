@@ -793,7 +793,7 @@ static char *ngx_http_ustats(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
     ngx_str_t * shm_name = NULL;
 	shm_name = ngx_palloc(cf->pool, sizeof(*shm_name));
-	shm_name->len = sizeof("stats_data") - 1;
+	shm_name->len = sizeof("stats_data");
 	shm_name->data = (unsigned char*)"stats_data";
 
 	if (stats_data_size == 0)
