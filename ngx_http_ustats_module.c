@@ -713,7 +713,7 @@ static char* ngx_http_ustats_merge_loc_conf(ngx_conf_t *cf, void *parent, void *
 /*****************************************************************************/
 
 
-static ngx_int_t ngx_http_ustats_init_shm(ngx_shm_zone_t * shm_zone, void * data)
+static ngx_int_t ngx_http_ustats_init_shm(ngx_shm_zone_t *shm_zone, void *data)
 {
 	if (data)
 	{
@@ -793,7 +793,7 @@ static char *ngx_http_ustats(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
     ngx_str_t * shm_name = NULL;
 	shm_name = ngx_palloc(cf->pool, sizeof(*shm_name));
-	shm_name->len = sizeof("stats_data");
+	shm_name->len = sizeof("stats_data") - 1;
 	shm_name->data = (unsigned char*)"stats_data";
 
 	if (stats_data_size == 0)
